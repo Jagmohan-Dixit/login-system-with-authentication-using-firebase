@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login System</title>
+
+  <link rel="stylesheet" href="../static/style.css">
+
+</head>
+
+<body>
+
+  <div class="navbar">
+    {% if session['login'] %}
+    <div class="nav_item">
+      <a href="{{url_for('users.home')}}">Home</a>
+    </div>
+    <div class="nav_item">
+      <a href="{{url_for('users.about')}}">About</a>
+    </div>
+    <div class="nav_item">
+      <a href="/profile/{{session['username']}}">Profile</a>
+    </div>
+    <div class="nav_item">
+      <a href="{{url_for('users.logout')}}">Log Out</a>
+    </div>
+    {% else %}
+    <div class="nav_item">
+      <a href="{{url_for('users.index')}}">Home</a>
+    </div>
+    <div class="nav_item">
+      <a href="{{url_for('users.register')}}">Sign Up</a>
+    </div>
+    <div class="nav_item">
+      <a href="{{url_for('users.login')}}">Login</a>
+    </div>
+    {% endif %}
+  </div>
+  </form>
+  {% block content %}
+  {# Template inserted here #}
+  {% endblock %}
+
+</body>
+
+</html>

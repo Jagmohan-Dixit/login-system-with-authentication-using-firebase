@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="center">Welcome to the Profile {{user['username'].upper()}}</h1>
+    {% if user['username'] == session['username'] %}
+    <div class="container">
+        <form method="POST" action="" enctype="multipart/form-data">
+            <div class="center image">
+                <img class="profile" src="{{ url_for('static', filename='profile_pics/'+profile) }}">
+            </div>
+            {{ form.hidden_tag() }}
+            <div class=center>{{ form.picture(class="profile_pic") }}</div> <br>
+            <div class=center>{{ form.submit(class="button") }}</div> <br> 
+        </form>
+    </div>
+    {% else %}
+    <div class="center image">
+        <img class="profile" src="{{ url_for('static', filename='profile_pics/'+profile) }}">
+    </div>
+    {% endif %}
+
+
+    {% if length > 1 %} 
+        {% if user['username'] == session['username'] %}
+            <div class="posts">
+                <h1 class="center">Hello {{user['username'].upper()}} Your Posts Are here</h1>
+            </div>
+        {% else %}
+            <div class="posts">
+                <h1 class="center">{{user['username'].upper()}}'s Posts</h1>
+            </div>
+        {% endif %}
+        <div class="blogposts">
+            <div class="blogpost">
+            {% if length > 1 %} 
+            {%for post in blogposts %}
+            {% if post != '' %}
+               {% if user['username'] == session['username'] %}
+                <div class="blog">
+                    <h2>Written By : <a href="/profile/{{session['username']}}">{{post['author']}}</a></h2>
+                    <p>Published on : {{post['date']}}</p>
+                    <p><span style="font-size: 1.7rem; font-weight: 600;">Post : </span>{{post['text']}}</p>
+                </div>
+                {% else %}
+                <div class="blog">
+                    <h2>Written By : <a href="/profile/{{user['username']}}">{{post['author']}}</a></h2>
+                    <p>Published on : {{post['date']}}</p>
+                    <p><span style="font-size: 1.7rem; font-weight: 600;">Post : </span>{{post['text']}}</p>
+                </div>
+                {% endif %}
+                {% endif %} 
+            {% endfor %}
+            {% endif %} 
+            </div>
+        </div>
+    {% else %}
+        <h1 class="center">Hello {{user['username']}} You Don't Have any Posts First Create Post</h1>
+        <h2 class="center"><a href="{{url_for('users.home')}}">Go Back To Create Post</a></h2>
+    {% endif %}
+{% endblock %}
+<!-- <h2> <a href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a></h2> -->

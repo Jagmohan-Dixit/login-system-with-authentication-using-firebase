@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+ 
+<div class="blogposts">
+    <div style="width: 60%;">
+        <div class="aboutcard">
+            <div class="image">
+                <img class="user_profile" src="{{ url_for('static', filename='profile_pics/'+user['picture']) }}">
+                </div>
+            <div class="user_details">
+                <p><span style="font-size: 1.7rem; font-weight: 600;">Name : {{user['username'].upper()}}</span></p>
+                <h2>Email : {{user['email']}}</h2>
+                <h2>Total Posts : {{length}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

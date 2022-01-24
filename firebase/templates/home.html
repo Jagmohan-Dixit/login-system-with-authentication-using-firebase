@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+    <h1 class="center">Hello {{session['username'].upper()}} Create Your Post Here</h1>
+</div>
+<div class="postform">
+    <div class="home">
+        <form method="POST" action="" enctype="multipart/form-data">
+            <div class="form">
+                {{ form.hidden_tag() }}
+                {{ form.text(class="textfield") }}
+                <div class=center>{{ form.picture(class="post_pic") }}</div> <br>
+                <div class=center>{{ form.submit(class="button") }}</div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if blog_data %}
+{% for post in blog_data %}
+{% if post['id'] %}
+<div class="blogposts">
+    <div class="blogpost">
+        <div class="blog">
+            <h1>Post No : {{post['id']}}</h1>
+            <h2>Posted By : <a href="/profile/{{post['author']}}">{{post['author']}}</a></h2>
+            <p>Posted on : {{post['date']}}</p>
+            <p><span style="font-size: 1.7rem; font-weight: 600;">Post : </span>{{post['text']}}</p>
+            <div class="center">
+                <img class="post_image" src="{{post['picture']}}"> 
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endblock %}

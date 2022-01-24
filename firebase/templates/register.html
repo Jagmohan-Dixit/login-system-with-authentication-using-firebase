@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- {% if email_exist %}
+<script>
+    alert("Email Already Exists Login to Continue!")
+</script>
+{% endif %}
+{% if name_exist %}
+<script>
+    alert("Name Already Exists Try another Name!")
+</script>
+{% endif %} -->
+<h1 class="center">Registration Form</h1>
+<div class="postform">
+    <div class="home">
+        <form method="POST">
+            <!-- <div class="form"> -->
+                {{ form.hidden_tag() }}
+                <h1>{{ form.email.label }} {{ form.email(class="inputfield") }}</h1>
+                <h1>{{ form.username.label }} {{ form.username(class="inputfield") }}</h1>
+                <h1>{{ form.password.label }} {{ form.password(class="inputfield") }}</h1>
+                <h1>{{ form.pass_confirm.label }} {{ form.pass_confirm(class="inputfield") }}</h1>
+                <div class=center>{{ form.submit(class="button") }}</div>
+            <!-- </div> -->
+        </form>
+    </div>
+</div>
+{% endblock %}

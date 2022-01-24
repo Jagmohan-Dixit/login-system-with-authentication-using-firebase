@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--black);
+    background-color: burlywood;
+  }
+
+  .navbar {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav_item {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image {
+    padding-bottom: 2rem;
+  }
+
+/* FOR PROFILE PAGE AND USER'S BLOGPOSTS */
+  
+.profile {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 1000px;
+  }
+
+  .blogposts {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    /* background-color: black; */
+  }
+
+  .blogpost {
+     width: 50%;
+  }
+  .blog {
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: cadetblue;
+  }
+
+/* FOR HOME PAGE , LOGIN PAGE AND REGISTER PAGE FORM */
+
+  .postform {
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .form {
+    padding: 2rem;
+    background-color: blueviolet;
+    border-radius: 3rem;
+  }
+
+  .button {
+    background-color: rgb(42, 210, 216);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 3rem;
+  }
+
+  .home {
+    width: 70%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    /* padding: 2rem; */
+  }
+
+  .inputfield {
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    padding: 0.6rem;
+    padding-left: 1rem;
+  }
+
+  .textfield {
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    padding: 0.8rem;
+  }
+
+  .profile_pic {
+    font-size: 1.2rem;
+    padding-left: 7rem;
+  }
+
+
+  .aboutcard {
+    display: flex;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: cadetblue;
+  }
+
+  .user_profile {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 1000px;
+  }
+
+  .user_details {
+    width: 60%;
+    padding-left: 4rem;
+  }
+
+
+  .post_image {
+    width: 350px;
+    height: 400px;
+    border-radius: 1rem;
+  }
